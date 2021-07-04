@@ -12,3 +12,5 @@ RUN mkdir ~/.npm-global && \
     echo "export PATH=~/.npm-global/bin:\$PATH" >> ~/.profile
 
 USER root
+
+VOLUME ["/home/devuser/.npm-global"]
