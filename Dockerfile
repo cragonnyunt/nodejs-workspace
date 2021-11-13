@@ -6,12 +6,4 @@ RUN apt-get update && \
 RUN curl -fsSL https://deb.nodesource.com/setup_current.x | bash - && \
     apt-get install -y nodejs
 
-USER devuser
-
-RUN mkdir ~/.npm-global && \
-    npm config set prefix '~/.npm-global' && \
-    echo "export PATH=\$PATH:\$HOME/.npm-global/bin" >> ~/.zshrc
-
-USER root
-
-VOLUME ["/home/devuser/.npm-global"]
+VOLUME ["/home/devuser/.npm"]
