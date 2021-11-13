@@ -8,6 +8,7 @@ RUN apt-get update && \
 RUN curl -fsSL https://deb.nodesource.com/setup_lts.x | bash - && \
     apt-get install -y nodejs
 
-RUN chown -R $USER:$USER /home/devuser/.npm
+RUN mkdir /home/devuser/.npm && \
+    chown -R $USER:$USER /home/devuser/.npm
 
 VOLUME ["/home/devuser/.npm"]
